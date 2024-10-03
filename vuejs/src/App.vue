@@ -67,7 +67,7 @@
           </div>
   
           <div v-else-if="!connection_id">
-            <UnifiedDirectory :workspace_id="workspace_id" :categories="['messaging']" :environment="environment" />
+            <UnifiedDirectory :workspace_id="workspace_id" :categories="['messaging']" :environment="environment" :scopes="['messaging_channel_read, messaging_message_read']" />
             <Button class="button mt-8" @click="reset_auth">Reset Information</Button>
           </div>
         </div>
@@ -159,6 +159,7 @@
       this.connection_id = this.auth.connection_id
   
       const urlParams = new URLSearchParams(window.location.search)
+      console.log(urlParams)
       if (urlParams.has('id')) {
         this.auth.connection_id = this.connection_id = urlParams.get('id')!
       }
