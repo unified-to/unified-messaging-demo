@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.link {
+  @apply underline hover:text-blue-500;
+}
+
+body {
+  @apply text-gray-300 bg-gray-900;
+}
+
+.normal-text {
+  @apply mt-6 text-lg leading-8 text-gray-300;
+}
+
+.button {
+  @apply rounded-md bg-blue-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
+}
+.button:disabled {
+  @apply bg-gray-500 text-gray-300;
+}
+
+.form-label {
+  @apply block text-sm font-semibold leading-6 text-white;
+}
+
+.form-input {
+  @apply block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6;
+}
