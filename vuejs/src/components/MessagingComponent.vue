@@ -15,7 +15,7 @@
         <h4 class="text-lg font-semibold mb-2">Messages:</h4>
         <ul class="space-y-2">
           <li v-for="message in messages" :key="message.id" class="border p-2 rounded">
-            <strong>{{ message.author_member?.name || 'Unknown' }}:</strong> {{ message.message }}
+            <strong>{{ message.author_member?.name || message.author_member?.user_id || 'User' }}:</strong> {{ message.message }}
           </li>
         </ul>
       </div>
