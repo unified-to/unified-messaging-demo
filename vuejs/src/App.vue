@@ -67,7 +67,7 @@
           </div>
   
           <div v-else-if="!connection_id">
-            <UnifiedDirectory :workspace_id="workspace_id" :categories="['messaging']" :environment="environment" :scopes="['messaging_channel_read, messaging_message_read']" />
+            <UnifiedDirectory :workspace_id="workspace_id" :categories="['messaging']" :environment="environment" :scopes="['messaging_channel_read', 'messaging_message_read']" />
             <Button class="button mt-8" @click="reset_auth">Reset Information</Button>
           </div>
         </div>
@@ -147,6 +147,7 @@
         }
         user.environment = user.environment || 'Sandbox'
         this.environment = user.environment;
+        console.log('user: ', user)
   
         this.integrations = await this.get(
           `unified/integration/workspace/${this.workspace_id}?env=${encodeURIComponent(user.environment)}&categories=messaging`
@@ -167,6 +168,7 @@
       if (!this.connection_id && this.workspace_id && this.token) {
         this.get_integrations()
       }
+
     }
   }
   </script>
